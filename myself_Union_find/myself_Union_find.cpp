@@ -5,14 +5,11 @@ using namespace std;
 struct UnionFind {
 
     vector<int> parent;
-    //vector<int> rank;
-    
     UnionFind(int n) {
         parent.resize(n, 0);
-        //rank.resize(n, 0);
+       
         for (int i = 0;i < n;++i) {
             parent.at(i) = -1;
-            //rank.at(i) = 1;
         }
     }
 
@@ -61,9 +58,6 @@ int main()
         cout << uf.parent.at(i) << endl;
     }
 
-    /*for (int i = 0;i < N;++i) {
-        cout << uf.rank.at(i) << endl;
-    }*/
     return 0;
 }
 
