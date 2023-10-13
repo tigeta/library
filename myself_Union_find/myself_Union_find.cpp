@@ -13,6 +13,15 @@ struct UnionFind {
         }
     }
 
+    bool same(int e, int f) {
+        if (find(e) == find(f)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     int find(int x) {
         if (parent.at(x) < 0) {
             return x;
@@ -47,7 +56,7 @@ int main()
     cin >> N >> Q;
     
     UnionFind uf(N);
-
+    vector<int> value(N);
     for (int i = 0;i < Q;++i) {
         int A, B;
         cin >> A >> B;
