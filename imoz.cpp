@@ -14,7 +14,7 @@ int main()
 		l--; r--;
 
 		vec.at(l)++;
-		vec.at(r + 1)--;
+		if(r+1 < N) vec.at(r + 1)--;
 	}
 
 	for (int i = 1;i < N;++i) {
