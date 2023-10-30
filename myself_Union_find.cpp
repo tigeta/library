@@ -1,4 +1,5 @@
-﻿#include <iostream>
+//Union-Find
+#include <iostream>
 #include <vector>
 using namespace std;
 
@@ -6,14 +7,10 @@ struct UnionFind {
 
     vector<int> parent;
     UnionFind(int n) {
-        parent.resize(n, 0);
-       
-        for (int i = 0;i < n;++i) {
-            parent.at(i) = -1;
-        }
+        parent.resize(n, -1); //-1で初期化
     }
 
-    bool same(int e, int f) {
+    bool same(int e, int f) { //所属判定
         if (find(e) == find(f)) {
             return true;
         }
@@ -22,7 +19,7 @@ struct UnionFind {
         }
     }
 
-    int find(int x) {
+    int find(int x) { //経路圧縮しながら親を見つける
         if (parent.at(x) < 0) {
             return x;
         }
@@ -32,7 +29,7 @@ struct UnionFind {
         }
     }
     
-    void unite(int a, int b) {
+    void unite(int a, int b) { //ランクの大きいほうに低いほうを結合
         int s, t;
         s = find(a);
         t = find(b);
