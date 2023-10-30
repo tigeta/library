@@ -1,4 +1,5 @@
-﻿#include <iostream>
+//二次元の累積和
+#include <iostream>
 #include <vector>
 using namespace std;
 
@@ -13,7 +14,7 @@ int main()
 
 	
 
-	for (int i = 0;i < N;++i) {
+	for (int i = 0;i < N;++i) { //(行の累積和)　+　(列の累積和) - (二重に加えた部分) + (新たな入力)
 		for (int j = 0;j < M;++j) {
 			int s; cin >> s;
 			sum.at(i + 1).at(j + 1) = sum.at(i).at(j + 1) + sum.at(i + 1).at(j) - sum.at(i).at(j) + s;
