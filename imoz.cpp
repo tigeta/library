@@ -1,4 +1,5 @@
-﻿#include <iostream>
+//いもす法
+#include <iostream>
 #include <vector>
 using namespace std;
 
@@ -13,8 +14,8 @@ int main()
 		cin >> l >> r;
 		l--; r--;
 
-		vec.at(l)++;
-		if(r+1 < N) vec.at(r + 1)--;
+		vec.at(l)++; //視点に1加える
+		if(r+1 < N) vec.at(r + 1)--; //範囲内なら終点から1引く
 	}
 
 	for (int i = 1;i < N;++i) {
